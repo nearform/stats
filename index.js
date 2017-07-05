@@ -38,6 +38,8 @@ function StatsProducer (optsArg) {
       argv: process.argv,
       execArgv: process.execArgv,
       execPath: process.execPath,
+      cpuUsage: process.cpuUsage(),
+      memoryUsage: process.memoryUsage(),
       // mainModule: process.mainModule,
       uptime: process.uptime()
     },
@@ -90,6 +92,8 @@ StatsProducer.prototype._regenerateStats = function () {
   this.stats.timestamp = new Date()
 
   this.stats.process.uptime = process.uptime()
+  this.stats.process.cpuUsage = process.cpuUsage()
+  this.stats.process.memoryUsage = process.memoryUsage()
   this.stats.system.uptime = os.uptime()
   this.stats.system.freemem = os.freemem()
   this.stats.system.loadavg = os.loadavg()
