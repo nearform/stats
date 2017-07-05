@@ -38,7 +38,7 @@ function StatsProducer (optsArg) {
       argv: process.argv,
       execArgv: process.execArgv,
       execPath: process.execPath,
-      mainModule: process.mainModule,
+      // mainModule: process.mainModule,
       uptime: process.uptime()
     },
     system: {
