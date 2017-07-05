@@ -100,7 +100,7 @@ StatsProducer.prototype._regenerateStats = function () {
     overLimit: this._loopbench.overLimit
   }
 
-  this.stats.gc = this._gcs.splice(0)
+  this.stats.gcRuns = this._gcs.splice(0)
 
   return this.stats
 }
