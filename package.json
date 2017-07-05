@@ -1,5 +1,5 @@
 {
-  "name": "stats",
+  "name": "@nearform/stats",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
