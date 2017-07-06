@@ -11,6 +11,7 @@ test('stats producer initialises with defaults as expected', (t) => {
   t.equal(statsProducer._opts.loopbench.sampleInterval, 500, 'Stats producer should initialise with the correct defaults')
   t.equal(statsProducer._opts.loopbench.limit, 50, 'Stats producer should initialise with the correct defaults')
   t.equal(statsProducer._opts.sampleInterval, 5, 'Stats producer should initialise with the correct defaults')
+  t.deepEqual(statsProducer._opts.tags, [], 'Stats producer should initialise with the correct defaults')
   t.end()
 })
 
@@ -46,7 +47,7 @@ test('stats producer runs as expected with defaults', {timeout: 20000}, (t) => {
 })
 
 test('stats producer runs as expected with with overwritten defaults', {timeout: 5000}, (t) => {
-  const statsProducer = new StatsProducer({sampleInterval: 1})
+  const statsProducer = new StatsProducer({sampleInterval: 1, tags: ['some', 'tags']})
 
   t.false(statsProducer._probing)
 
@@ -60,6 +61,7 @@ test('stats producer runs as expected with with overwritten defaults', {timeout:
     t.ok(stats.process)
     t.ok(stats.system)
     t.ok(stats.eventLoop)
+    t.deepEqual(stats.tags, ['some', 'tags'])
 
     numberOfGeneratedStats++
   })

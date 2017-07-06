@@ -18,7 +18,8 @@ function StatsProducer (optsArg) {
       sampleInterval: opts.eventLoopSampleInterval || 500,
       limit: opts.eventLoopLimit || 50
     },
-    sampleInterval: opts.sampleInterval || 5
+    sampleInterval: opts.sampleInterval || 5,
+    tags: opts.tags || []
   }
   this._probing = false
   this._loopbench = undefined
@@ -30,6 +31,7 @@ function StatsProducer (optsArg) {
 
   this.stats = {
     timestamp: new Date(),
+    tags: this._opts.tags,
     process: {
       title: process.title,
       pid: process.pid,
