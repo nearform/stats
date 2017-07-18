@@ -1,5 +1,7 @@
 # stats
 
+[![Build Status](https://travis-ci.org/nearform/stats.svg?branch=master)](https://travis-ci.org/nearform/stats)
+
 Collect stats about your node.js process
 
 ## Installation
