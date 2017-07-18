@@ -46,6 +46,7 @@ The StatsProducer event emitter which is returned has the following methods.
 
 The stat object which is emitted has the following properties:
 
+- `id`: A uuid generated at start up for this stats producer
 - `timestamp`: The time the stats were generated
 - `process`: an object with the following properties extracted from the global process object. See the official node documentation for more information on these properties.
   - `cpuUsage`: This is a function on the process object which is invoked to fill in the value.
