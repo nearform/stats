@@ -5,7 +5,7 @@ Collect stats about your node.js process
 ## Installation
 
 ```
-npm i --save stats
+npm install -save @nearform/stats
 ```
 
 ### Usage
@@ -14,7 +14,7 @@ This module exports a function which instantiates an event emitter which emits a
 
 ### Example:
 ```js
-const StatsProducer = require('stats')
+const StatsProducer = require('@nearform/stats')
 const statsProducer = new StatsProducer()
 statsProducer.start()
 statsProducer.on('stats', function (stats) {
