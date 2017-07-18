@@ -155,9 +155,9 @@ StatsProducer.prototype._getHandlesInfo = function () {
       }
     } else if (handle instanceof net.Socket) {
       handles.sockets++
-      openServers.push(handle.address())
     } else if (handle instanceof net.Server) {
       handles.servers++
+      openServers.push(handle.address())
     } else if (handle instanceof ChildProcess) {
       handles.childProcesses++
     } else if (handle instanceof EventEmitter && typeof handle.start === 'function' && typeof handle.close === 'function' && handle._handle instanceof FSEvent) {
