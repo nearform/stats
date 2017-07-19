@@ -43,7 +43,7 @@ function StatsProducer (optsArg) {
 
   this._emitInterval = reInterval(() => this.emit('stats', this._regenerateStats()), this._opts.sampleInterval * 1000)
   this._emitInterval.clear()
-  console.log(process)
+
   const handlesInfo = this._getHandlesInfo()
   this.stats = {
     timestamp: new Date(),
