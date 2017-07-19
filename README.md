@@ -7,7 +7,7 @@ Collect stats about your node.js process
 ## Installation
 
 ```
-npm install -save @nearform/stats
+npm install --save @nearform/stats
 ```
 
 ### Usage
