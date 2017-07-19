@@ -15,7 +15,7 @@ Once your dashboard is setup with create-stats-dashboard, all you should need to
 ## Installation
 
 ```
-npm install -save @nearform/stats
+npm install --save @nearform/stats
 ```
 
 ### Usage
