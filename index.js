@@ -57,7 +57,7 @@ function StatsProducer (optsArg) {
       argv: process.argv,
       execArgv: process.execArgv,
       execPath: process.execPath,
-      cpuUsage: process.cpuUsage(),
+      cpuUsage: this._getCpuUsage(),
       memoryUsage: process.memoryUsage(),
       // mainModule: process.mainModule,
       uptime: process.uptime(),
@@ -114,7 +114,7 @@ StatsProducer.prototype._regenerateStats = function () {
   this.stats.timestamp = new Date()
 
   this.stats.process.uptime = process.uptime()
-  this.stats.process.cpuUsage = process.cpuUsage()
+  this.stats.process.cpuUsage = this._getCpuUsage()
   this.stats.process.memoryUsage = process.memoryUsage()
   const handlesInfo = this._getHandlesInfo()
   this.stats.process.handles = handlesInfo.handles
@@ -168,6 +168,11 @@ StatsProducer.prototype._getHandlesInfo = function () {
   }
 
   return {handles, openServers}
+}
+
+StatsProducer.prototype._getCpuUsage = function () {
+  if (process.cpuUsage) return process.cpuUsage()
+  else return 0
 }
 
 module.exports = StatsProducer

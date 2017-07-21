@@ -45,6 +45,7 @@ Returns an event emitter which emits a `stats` event containing useful stats.
   - sampleInterval: a `number` representing the amount of seconds to take a sample when running. Defaults to 5 seconds.
   - eventLoopSampleInterval: the interval at which the eventLoop should be sampled, defaults to 500.
   - eventLoopLimit: the maximum amount of delay that is tolerated before overLimit is detected as true, defaults to 50.
+  - tags: an array of user defined strings to tag your stats with
 
 The StatsProducer event emitter which is returned has the following methods.
 
@@ -56,6 +57,7 @@ The StatsProducer event emitter which is returned has the following methods.
 
 The stat object which is emitted has the following properties:
 
+- `tags`: the array of user defined strings defined in the constructor to tag your stats with
 - `id`: A uuid generated at start up for this stats producer
 - `timestamp`: The time the stats were generated
 - `process`: an object with the following properties extracted from the global process object. See the official node documentation for more information on these properties.
